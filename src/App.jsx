@@ -826,7 +826,7 @@ export default function LightBluePortfolio() {
           )}
         </div>
           
-        <div className="max-w-4xl mx-auto text-center px-6">
+        <div className="max-w-4xl mx-auto text-center px-6 mb-24">
           <div className="flex gap-4 justify-center">
             <button className="px-8 py-3 bg-blue-900 text-white font-semibold hover:scale-105 transition-transform rounded-lg">
               See How I Work
@@ -838,10 +838,6 @@ export default function LightBluePortfolio() {
               Let's Talk
             </button>
           </div>
-        </div>
-        
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-blue-900" />
         </div>
       </section>
 
