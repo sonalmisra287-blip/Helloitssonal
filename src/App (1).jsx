@@ -889,7 +889,7 @@ export default function LightBluePortfolio() {
           </h2>
           <p className="text-xl text-gray-600 mb-16">Real experiments. Real outcomes.</p>
           
-          {!selectedCase ? (
+          {selectedCase === null ? (
             <div className="grid md:grid-cols-3 gap-6">
               {caseStudies.map((study, idx) => (
                 <div
