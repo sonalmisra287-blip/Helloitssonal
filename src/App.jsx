@@ -484,6 +484,37 @@ const StoryCard = ({ title, subtitle, problem, system, howItWorks, whyItMatters,
   );
 };
 
+// TestimonialCard Component - Defined outside to prevent re-renders
+const TestimonialCard = ({ shortQuote, fullQuote, author, title }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className="bg-white p-8 rounded-lg hover:shadow-xl transition-shadow border border-blue-100">
+      <p className="text-lg mb-6 leading-relaxed text-gray-700">
+        "{isExpanded ? fullQuote : shortQuote}"
+      </p>
+      {!isExpanded && (
+        <button
+          onClick={() => setIsExpanded(true)}
+          className="text-blue-900 font-semibold text-sm hover:underline mb-4 cursor-pointer"
+        >
+          Read more →
+        </button>
+      )}
+      {isExpanded && (
+        <button
+          onClick={() => setIsExpanded(false)}
+          className="text-blue-900 font-semibold text-sm hover:underline mb-4 cursor-pointer"
+        >
+          Show less ←
+        </button>
+      )}
+      <p className="text-sm text-gray-600 font-semibold">— {author}</p>
+      <p className="text-xs text-gray-500">{title}</p>
+    </div>
+  );
+};
+
 export default function LightBluePortfolio() {
   const [scrollY, setScrollY] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -682,36 +713,6 @@ export default function LightBluePortfolio() {
       ]
     }
   ];
-
-  const TestimonialCard = ({ shortQuote, fullQuote, author, title }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    return (
-      <div className="bg-white p-8 rounded-lg hover:shadow-xl transition-shadow border border-blue-100">
-        <p className="text-lg mb-6 leading-relaxed text-gray-700">
-          "{isExpanded ? fullQuote : shortQuote}"
-        </p>
-        {!isExpanded && (
-          <button
-            onClick={() => setIsExpanded(true)}
-            className="text-blue-900 font-semibold text-sm hover:underline mb-4"
-          >
-            Read more →
-          </button>
-        )}
-        {isExpanded && (
-          <button
-            onClick={() => setIsExpanded(false)}
-            className="text-blue-900 font-semibold text-sm hover:underline mb-4"
-          >
-            Show less ←
-          </button>
-        )}
-        <p className="text-sm text-gray-600 font-semibold">— {author}</p>
-        <p className="text-xs text-gray-500">{title}</p>
-      </div>
-    );
-  };
 
   return (
     <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100 text-gray-900 font-sans relative overflow-x-hidden">
