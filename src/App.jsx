@@ -808,13 +808,13 @@ export default function LightBluePortfolio() {
               <div className="space-y-4 text-lg text-gray-700 leading-relaxed text-center">
                 <p className="text-2xl font-semibold text-blue-900">Hi, I'm Sonal</p>
                 <p>
-                  I'm a University of Waterloo grad with a background in Business and Psychology, and I'm fascinated by how people, systems, and strategy come together. I enjoy tackling messy problems, building smarter processes, and finding ways to make work feel clearer and more human.
+                I'm a University of Waterloo grad with a background in Business and Psychology, and I'm fascinated by how people, systems, ideas and strategy come together. I enjoy tackling messy problems and building smarter processes to help make work feel clearer and more human.
                 </p>
                 <p>
-                  I love bringing campaigns to life, from shaping the message and understanding the audience to launching, testing, and learning from real customer behavior. I'm at my best when I'm using insights and data to improve engagement, refine messaging, and create experiences that feel thoughtful rather than transactional.
+                I love bringing campaigns to life, from shaping messages for audiences and understanding the audience to launching and testing from real customer behavior. I'm at my best when I'm using insights and data to create experiences that feel thoughtful rather than transactional.
                 </p>
                 <p>
-                  I'm especially interested in the space where traditional marketing meets automation, using systems and technology to remove busywork and support better ideas. Right now, I'm focused on blending psychology, business strategy, and technology to build marketing that genuinely works for people.
+                I'm especially interested in the space where traditional marketing meets automation to support better ideas. Right now, I'm focused on blending psychology, business strategy, and technology to build marketing that genuinely works for people.
                 </p>
                 <p>
                   I hope you enjoy reading a little about my journey as much as I've enjoyed creating this space for you 😊
