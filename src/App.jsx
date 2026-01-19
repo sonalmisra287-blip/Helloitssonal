@@ -383,6 +383,7 @@ export default function LightBluePortfolio() {
   const [storyPage1, setStoryPage1] = useState(0);
   const [storyPage2, setStoryPage2] = useState(0);
   const [storyPage3, setStoryPage3] = useState(0);
+  const [aboutMeOpen, setAboutMeOpen] = useState(false);
 
   const carouselItems = [
     'Sonal Misra',
@@ -769,10 +770,10 @@ export default function LightBluePortfolio() {
       </div>
 
       {/* Hero with Carousel */}
-      <section className="min-h-screen flex items-center justify-center px-6 relative">
-        <div className="max-w-4xl text-center relative z-10">
+      <section className="min-h-screen px-6 relative pt-24">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Profile Photo */}
-          <div className="mb-8 pt-24 flex justify-center">
+          <div className="mb-8 flex justify-center">
             <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-4 border-blue-900 shadow-xl profile-3d-card">
               <img 
                 src="/photos/sonal.JPG" 
@@ -792,21 +793,40 @@ export default function LightBluePortfolio() {
               </h1>
             </div>
           </div>
-          <div className="max-w-3xl mx-auto text-left space-y-4 text-lg text-gray-700 leading-relaxed mb-12">
-            <p className="text-2xl font-semibold text-blue-900">Hi, I'm Sonal</p>
-            <p>
-              I'm a University of Waterloo grad with a background in Business and Psychology, and I'm fascinated by how people, systems, and strategy come together. I enjoy tackling messy problems, building smarter processes, and finding ways to make work feel clearer and more human.
-            </p>
-            <p>
-              I love bringing campaigns to life, from shaping the message and understanding the audience to launching, testing, and learning from real customer behavior. I'm at my best when I'm using insights and data to improve engagement, refine messaging, and create experiences that feel thoughtful rather than transactional.
-            </p>
-            <p>
-              I'm especially interested in the space where traditional marketing meets automation, using systems and technology to remove busywork and support better ideas. Right now, I'm focused on blending psychology, business strategy, and technology to build marketing that genuinely works for people.
-            </p>
-            <p>
-              I hope you enjoy reading a little about my journey as much as I've enjoyed creating this space for you 😊
-            </p>
-          </div>
+        </div>
+        
+        {/* About Me Dropdown - Completely separate from carousel */}
+        <div className="max-w-4xl mx-auto mb-12 px-6">
+          <button
+            onClick={() => setAboutMeOpen(!aboutMeOpen)}
+            className="w-full flex items-center justify-center gap-4 px-8 py-5 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-blue-200 hover:border-blue-900"
+          >
+            <span className="text-3xl font-semibold text-blue-900">About Me</span>
+            <ChevronDown className={`w-8 h-8 text-blue-900 transition-transform duration-300 ${aboutMeOpen ? 'rotate-180' : ''}`} />
+          </button>
+          
+          {aboutMeOpen && (
+            <div className="mt-4 bg-white rounded-lg shadow-lg border border-blue-100 p-6 animate-unfold">
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed text-center">
+                <p className="text-2xl font-semibold text-blue-900">Hi, I'm Sonal</p>
+                <p>
+                  I'm a University of Waterloo grad with a background in Business and Psychology, and I'm fascinated by how people, systems, and strategy come together. I enjoy tackling messy problems, building smarter processes, and finding ways to make work feel clearer and more human.
+                </p>
+                <p>
+                  I love bringing campaigns to life, from shaping the message and understanding the audience to launching, testing, and learning from real customer behavior. I'm at my best when I'm using insights and data to improve engagement, refine messaging, and create experiences that feel thoughtful rather than transactional.
+                </p>
+                <p>
+                  I'm especially interested in the space where traditional marketing meets automation, using systems and technology to remove busywork and support better ideas. Right now, I'm focused on blending psychology, business strategy, and technology to build marketing that genuinely works for people.
+                </p>
+                <p>
+                  I hope you enjoy reading a little about my journey as much as I've enjoyed creating this space for you 😊
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+          
+        <div className="max-w-4xl mx-auto text-center px-6">
           <div className="flex gap-4 justify-center">
             <button className="px-8 py-3 bg-blue-900 text-white font-semibold hover:scale-105 transition-transform rounded-lg">
               See How I Work
@@ -819,6 +839,7 @@ export default function LightBluePortfolio() {
             </button>
           </div>
         </div>
+        
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronDown className="w-8 h-8 text-blue-900" />
         </div>
