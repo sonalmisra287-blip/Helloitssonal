@@ -613,7 +613,7 @@ export default function LightBluePortfolio() {
     {
       year: '2025',
       title: 'Customer Engagement Marketing Coordinator',
-      company: 'PointClickCare',
+      company: 'PointClickCare- Toronto, ON',
       duration: 'May 2025 - Sept 2025',
       logo: '/photos/pcc-logo.png',
       description: 'I worked on customer marketing campaigns, automations, and surveys to get users more engaged and excited about the product. I learned how to use data and AI to move faster, scale campaigns, and build processes that actually make life easier.',
@@ -626,7 +626,7 @@ export default function LightBluePortfolio() {
     {
       year: '2024',
       title: 'Customer Success Intern',
-      company: 'PointClickCare',
+      company: 'PointClickCare- Toronto, ON',
       duration: 'Sept 2024 - Apr 2025',
       logo: '/photos/pcc-logo.png',
       description: 'I helped bring inactive customers back through targeted emails, content, and data cleanup projects. This role taught me how customer insights, analytics, and collaboration across teams directly impact retention and revenue.',
@@ -639,7 +639,7 @@ export default function LightBluePortfolio() {
     {
       year: '2023',
       title: 'HR Corporate & Community Affairs Intern',
-      company: 'Fidelity Investments',
+      company: 'Fidelity Investments- Toronto, ON',
       duration: 'Sept 2023 - Dec 2023',
       logo: '/photos/fidelity-logo.png',
       description: 'I created internal content and helped improve employee platforms to make communication more engaging and accessible. I learned how internal storytelling, data, and community initiatives shape culture at a large organization.',
@@ -652,7 +652,7 @@ export default function LightBluePortfolio() {
     {
       year: '2023',
       title: 'Business Operations Intern',
-      company: 'Fidelity Investments',
+      company: 'Fidelity Investments- Toronto, ON',
       duration: 'Jan 2023 - Apr 2023',
       logo: '/photos/fidelity-logo.png',
       description: 'I worked behind the scenes in the registered products team, handling things like withdrawals, contributions, and RESPs to help everything run smoothly and faster. Along the way, I dug into reports, tracked transfer requests, and learned how paying attention to the small details can make a big difference in both decision-making and customer experience.',
