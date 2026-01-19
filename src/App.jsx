@@ -1221,7 +1221,9 @@ Sonal has shown steady growth in her ability to approach challenges thoughtfully
             </span>
             <span>Offline, but still curious.</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-12">Everything I do outside work makes me better at it.</p>
+          <p className="text-xl text-gray-600 mb-4">Everything I do outside work</p>
+          <h3 className="text-3xl font-bold text-blue-900 mb-2">Photography</h3>
+          <p className="text-lg text-gray-600 mb-12 italic">I've always had an eye for the details others walk past.</p>
           
           {/* Embedded Photo Carousel */}
           <EmbeddedCarousel photos={offHours[0].photos} />
