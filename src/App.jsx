@@ -776,7 +776,7 @@ export default function LightBluePortfolio() {
         <div className="max-w-4xl text-center relative z-10">
           {/* Profile Photo */}
           <div className="mb-8 flex justify-center">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-900 shadow-xl">
+            <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-4 border-blue-900 shadow-xl">
               <img 
                 src="/photos/sonal.JPG" 
                 alt="Sonal Misra"
