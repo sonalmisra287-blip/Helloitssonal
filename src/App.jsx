@@ -849,16 +849,18 @@ export default function LightBluePortfolio() {
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative">
                 <div className="absolute -left-14 w-6 h-6 bg-blue-900 rounded-full border-4 border-white" />
-                <div className="absolute -left-28 top-0 text-lg font-bold text-blue-900">{exp.year}</div>
+                <div className="absolute -left-32 top-0 flex flex-col items-center">
+                  <span className="text-lg font-bold text-blue-900">{exp.year}</span>
+                  {exp.logo && (
+                    <img src={exp.logo} alt={exp.company} className="w-12 h-12 object-contain mt-2 rounded-lg" />
+                  )}
+                </div>
                 <div 
                   className="bg-white p-6 rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow border border-blue-100"
                   onClick={() => setExpandedRole(expandedRole === idx ? null : idx)}
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      {exp.logo && (
-                        <img src={exp.logo} alt={exp.company} className="w-12 h-12 object-contain mb-2 rounded-lg" />
-                      )}
                       <h3 className="text-2xl font-bold mb-1">{exp.title}</h3>
                       <p className="text-gray-600">{exp.company}</p>
                       {expandedRole !== idx && (
