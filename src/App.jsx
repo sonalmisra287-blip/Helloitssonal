@@ -1228,8 +1228,10 @@ Sonal has shown steady growth in her ability to approach challenges thoughtfully
           {/* Embedded Photo Carousel */}
           <EmbeddedCarousel photos={offHours[0].photos} />
           
-          {/* Blog Link */}
-          <div className="mt-12 text-center">
+          {/* Blog Section */}
+          <div className="mt-16 text-center">
+            <h3 className="text-3xl font-bold text-blue-900 mb-2">Writing</h3>
+            <p className="text-lg text-gray-600 mb-6 italic">Where I turn thoughts into words and ideas into stories.</p>
             <a 
               href="https://sonalmisrablog.home.blog/" 
               target="_blank" 
