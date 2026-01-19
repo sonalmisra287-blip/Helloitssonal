@@ -96,23 +96,39 @@ const PhotoCarousel = ({ photos, caption, onClose }) => {
 // Embedded Carousel Component (Auto-playing)
 const EmbeddedCarousel = ({ photos }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  // Auto-advance every 3 seconds
+  // Preload next few images
+  useEffect(() => {
+    if (!photos || photos.length === 0) return;
+    
+    // Preload next 3 images
+    for (let i = 1; i <= 3; i++) {
+      const nextIndex = (currentPhoto + i) % photos.length;
+      const img = new Image();
+      img.src = photos[nextIndex];
+    }
+  }, [currentPhoto, photos]);
+
+  // Auto-advance every 4 seconds (slightly slower for better loading)
   useEffect(() => {
     if (!photos || photos.length === 0) return;
     
     const interval = setInterval(() => {
+      setIsLoaded(false);
       setCurrentPhoto((prev) => (prev + 1) % photos.length);
-    }, 3000);
+    }, 4000);
     
     return () => clearInterval(interval);
   }, [photos]);
 
   const nextPhoto = () => {
+    setIsLoaded(false);
     setCurrentPhoto((prev) => (prev + 1) % photos.length);
   };
 
   const prevPhoto = () => {
+    setIsLoaded(false);
     setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length);
   };
 
@@ -124,12 +140,20 @@ const EmbeddedCarousel = ({ photos }) => {
     <div className="max-w-6xl mx-auto">
       <div className="rounded-lg overflow-hidden shadow-xl">
         {/* Photo */}
-        <div className="relative">
+        <div className="relative bg-gray-200">
           <img
             src={photos[currentPhoto]}
             alt={`Street photography ${currentPhoto + 1}`}
-            className="w-full h-[85vh] object-cover"
+            className={`w-full h-[85vh] object-cover transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setIsLoaded(true)}
           />
+          
+          {/* Loading placeholder */}
+          {!isLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+              <div className="w-10 h-10 border-4 border-blue-900 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
           
           {/* Navigation Arrows */}
           <button
