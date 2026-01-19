@@ -1215,18 +1215,27 @@ Sonal has shown steady growth in her ability to approach challenges thoughtfully
           <EmbeddedCarousel photos={offHours[0].photos} />
           
           {/* Blog Section */}
-          <div className="mt-16 text-center">
+          <div className="mt-16 text-left">
             <h3 className="text-3xl font-bold text-blue-900 mb-2">Writing</h3>
             <p className="text-lg text-gray-600 mb-6 italic">Where I turn thoughts into words and ideas into stories.</p>
-            <a 
-              href="https://sonalmisrablog.home.blog/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all hover:scale-105 shadow-lg"
-            >
-              <span className="text-2xl">✍️</span>
-              <span>Read my blog</span>
-            </a>
+            <div className="rounded-lg overflow-hidden shadow-xl border-2 border-blue-200">
+              <iframe 
+                src="https://sonalmisrablog.home.blog/" 
+                title="Sonal's Blog"
+                className="w-full h-[600px] bg-white"
+                loading="lazy"
+              />
+            </div>
+            <p className="mt-4 text-sm text-gray-500">
+              <a 
+                href="https://sonalmisrablog.home.blog/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-900 hover:underline"
+              >
+                Open blog in new tab →
+              </a>
+            </p>
           </div>
         </div>
       </section>
