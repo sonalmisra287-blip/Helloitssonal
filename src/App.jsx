@@ -397,25 +397,25 @@ export default function LightBluePortfolio() {
       caption: 'Street photography', 
       insight: 'Composition teaches you what to emphasize',
       photos: [
-        '/photos/street1.JPG', '/photos/street2.JPG', '/photos/street3.JPG', '/photos/street4.JPG', '/photos/street5.JPG',
-        '/photos/street6.JPG', '/photos/street7.JPG', '/photos/street8.JPG', '/photos/street9.JPG', '/photos/street10.JPG',
-        '/photos/street11.JPG', '/photos/street12.JPG', '/photos/street13.JPG', '/photos/street14.JPG', '/photos/street15.JPG',
-        '/photos/street16.JPG', '/photos/street17.JPG', '/photos/street18.JPG', '/photos/street19.JPG', '/photos/street20.JPG',
-        '/photos/street21.JPG', '/photos/street22.JPG', '/photos/street23.JPG', '/photos/street24.JPG', '/photos/street25.JPG',
-        '/photos/street26.JPG', '/photos/street27.JPG', '/photos/street28.JPG', '/photos/street29.JPG', '/photos/street30.JPG',
-        '/photos/street31.JPG', '/photos/street32.JPG', '/photos/street33.JPG', '/photos/street34.JPG', '/photos/street35.JPG',
-        '/photos/street36.JPG', '/photos/street37.JPG', '/photos/street38.JPG', '/photos/street39.JPG', '/photos/street40.JPG',
+        '/photos/street1.JPG', '/photos/street2.JPG', '/photos/street3.JPG', '/photos/street4.JPG', '/photos/street6.JPG',
+        '/photos/street8.JPG', '/photos/street9.JPG', '/photos/street10.JPG', '/photos/street11.JPG', '/photos/street12.JPG',
+        '/photos/street13.JPG', '/photos/street14.JPG', '/photos/street15.JPG', '/photos/street16.JPG', '/photos/street17.JPG',
+        '/photos/street18.JPG', '/photos/street19.JPG', '/photos/street21.JPG', '/photos/street22.JPG', '/photos/street23.JPG',
+        '/photos/street25.JPG', '/photos/street26.JPG', '/photos/street27.JPG', '/photos/street28.JPG', '/photos/street29.JPG',
+        '/photos/street30.JPG', '/photos/street31.JPG', '/photos/street32.JPG', '/photos/street33.JPG', '/photos/street34.JPG',
+        '/photos/street35.JPG', '/photos/street37.JPG', '/photos/street38.JPG', '/photos/street39.JPG', '/photos/street40.JPG',
         '/photos/street41.JPG', '/photos/street42.JPG', '/photos/street43.JPG', '/photos/street44.JPG', '/photos/street45.JPG',
         '/photos/street46.JPG', '/photos/street47.JPG', '/photos/street48.JPG', '/photos/street49.JPG', '/photos/street50.JPG',
         '/photos/street51.JPG', '/photos/street52.JPG', '/photos/street53.JPG', '/photos/street54.JPG', '/photos/street55.JPG',
         '/photos/street56.JPG', '/photos/street57.JPG', '/photos/street58.JPG', '/photos/street59.JPG', '/photos/street60.JPG',
         '/photos/street61.JPG', '/photos/street62.JPG', '/photos/street63.JPG', '/photos/street64.JPG', '/photos/street65.JPG',
-        '/photos/street66.JPG', '/photos/street67.JPG', '/photos/street68.JPG', '/photos/street69.JPG', '/photos/street70.JPG',
-        '/photos/street71.JPG', '/photos/street72.JPG', '/photos/street73.JPG', '/photos/street74.JPG', '/photos/street75.JPG',
-        '/photos/street76.JPG', '/photos/street77.JPG', '/photos/street78.JPG', '/photos/street79.JPG', '/photos/street80.JPG',
-        '/photos/street81.JPG', '/photos/street82.JPG', '/photos/street83.JPG', '/photos/street84.JPG', '/photos/street85.JPG',
-        '/photos/street86.JPG', '/photos/street87.JPG', '/photos/street88.JPG', '/photos/street89.JPG', '/photos/street90.JPG',
-        '/photos/street91.JPG'
+        '/photos/street67.JPG', '/photos/street68.JPG', '/photos/street69.JPG', '/photos/street70.JPG', '/photos/street71.JPG',
+        '/photos/street72.JPG', '/photos/street73.JPG', '/photos/street75.JPG', '/photos/street76.JPG', '/photos/street77.JPG',
+        '/photos/street78.JPG', '/photos/street79.JPG', '/photos/street80.JPG', '/photos/street81.JPG', '/photos/street82.JPG',
+        '/photos/street83.JPG', '/photos/street84.JPG', '/photos/street85.JPG', '/photos/street86.JPG', '/photos/street87.JPG',
+        '/photos/street88.JPG', '/photos/street89.JPG', '/photos/street90.JPG', '/photos/street91.JPG', '/photos/street92.JPG',
+        '/photos/street93.JPG', '/photos/street94.JPG', '/photos/street96.JPG', '/photos/street99.JPG', '/photos/street100.JPG',
+        '/photos/street136.JPG'
       ]
     }
   ];
@@ -497,7 +497,7 @@ export default function LightBluePortfolio() {
                 <div className="flex items-start gap-3 mb-4">
                   <h4 className="text-2xl font-bold text-blue-900">The Problem</h4>
                 </div>
-                <p className="text-gray-800 text-lg leading-relaxed italic border-l-4 border-blue-900 pl-4">
+                <p className="text-gray-800 text-xl leading-relaxed italic border-l-4 border-blue-900 pl-4">
                   "{problem}"
                 </p>
               </div>
@@ -775,8 +775,8 @@ export default function LightBluePortfolio() {
       <section className="min-h-screen flex items-center justify-center px-6 relative">
         <div className="max-w-4xl text-center relative z-10">
           {/* Profile Photo */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-4 border-blue-900 shadow-xl">
+          <div className="mb-8 pt-24 flex justify-center">
+            <div className="relative w-72 h-72 rounded-2xl overflow-hidden border-4 border-blue-900 shadow-xl profile-3d-card">
               <img 
                 src="/photos/sonal.JPG" 
                 alt="Sonal Misra"
@@ -1091,10 +1091,10 @@ export default function LightBluePortfolio() {
       <section className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-5xl font-bold text-blue-900 mb-4 flex items-center gap-3">
-            <span className="text-6xl animate-hammer-hit">🔨</span>
+            <span className="text-5xl animate-lightbulb">💡</span>
             <span>What I'd Build Next</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-16">Three systems I'd automate if I ran product marketing.</p>
+          <p className="text-xl text-gray-600 mb-16">Systems I would build for marketing.</p>
           
           <div className="space-y-8">
             {/* Story 1: Product Launch Command Center */}
@@ -1635,6 +1635,101 @@ Sonal has shown steady growth in her ability to approach challenges thoughtfully
         .animate-spin-pen { animation: spin-pen 3s linear infinite; }
         .animate-wobble { animation: wobble 1.5s ease-in-out infinite; }
         .animate-plane { animation: plane-fly 5s ease-in-out infinite; }
+        
+        /* Lightbulb Glow Animation */
+        @keyframes lightbulb-glow {
+          0%, 100% {
+            filter: brightness(0.7) drop-shadow(0 0 0px rgba(255, 200, 0, 0));
+            transform: scale(1);
+          }
+          50% {
+            filter: brightness(1.3) drop-shadow(0 0 20px rgba(255, 200, 0, 0.9)) drop-shadow(0 0 40px rgba(255, 200, 0, 0.5));
+            transform: scale(1.1);
+          }
+        }
+        .animate-lightbulb {
+          display: inline-block;
+          animation: lightbulb-glow 2s ease-in-out infinite;
+        }
+        
+        /* Brick Building Animation */
+        .brick-stack {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          height: 60px;
+          width: 50px;
+          justify-content: flex-end;
+        }
+        .brick {
+          font-size: 1.2rem;
+          line-height: 1;
+          animation: brick-drop 3s ease-in-out infinite;
+          opacity: 0;
+        }
+        .brick-1 {
+          animation-delay: 0s;
+        }
+        .brick-2 {
+          animation-delay: 0.4s;
+        }
+        .brick-3 {
+          animation-delay: 0.8s;
+        }
+        @keyframes brick-drop {
+          0% {
+            transform: translateY(-30px);
+            opacity: 0;
+          }
+          15% {
+            transform: translateY(0px);
+            opacity: 1;
+          }
+          20% {
+            transform: translateY(-3px);
+          }
+          25% {
+            transform: translateY(0px);
+          }
+          80% {
+            transform: translateY(0px);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0px);
+            opacity: 0;
+          }
+        }
+        
+        /* 3D Profile Card Animation */
+        .profile-3d-card {
+          animation: float3d 6s ease-in-out infinite;
+          transform-style: preserve-3d;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-3d-card:hover {
+          animation-play-state: paused;
+          transform: perspective(1000px) rotateY(15deg) rotateX(5deg) scale(1.05);
+          box-shadow: -20px 20px 50px rgba(30, 58, 138, 0.3), 0 0 30px rgba(59, 130, 246, 0.2);
+        }
+        @keyframes float3d {
+          0%, 100% {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(0px);
+            box-shadow: -10px 10px 30px rgba(30, 58, 138, 0.2);
+          }
+          25% {
+            transform: perspective(1000px) rotateY(5deg) rotateX(-5deg) translateY(-10px);
+            box-shadow: 10px 20px 40px rgba(30, 58, 138, 0.25);
+          }
+          50% {
+            transform: perspective(1000px) rotateY(5deg) rotateX(5deg) translateY(0px);
+            box-shadow: 10px 10px 30px rgba(30, 58, 138, 0.2);
+          }
+          75% {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(-5deg) translateY(-10px);
+            box-shadow: -10px 20px 40px rgba(30, 58, 138, 0.25);
+          }
+        }
       `}</style>
     </div>
   );
