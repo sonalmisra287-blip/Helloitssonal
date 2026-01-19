@@ -93,6 +93,90 @@ const PhotoCarousel = ({ photos, caption, onClose }) => {
   );
 };
 
+// Embedded Carousel Component (Auto-playing)
+const EmbeddedCarousel = ({ photos }) => {
+  const [currentPhoto, setCurrentPhoto] = useState(0);
+
+  // Auto-advance every 3 seconds
+  useEffect(() => {
+    if (!photos || photos.length === 0) return;
+    
+    const interval = setInterval(() => {
+      setCurrentPhoto((prev) => (prev + 1) % photos.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, [photos]);
+
+  const nextPhoto = () => {
+    setCurrentPhoto((prev) => (prev + 1) % photos.length);
+  };
+
+  const prevPhoto = () => {
+    setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length);
+  };
+
+  if (!photos || photos.length === 0) {
+    return <div className="text-center text-gray-500">No photos available</div>;
+  }
+
+  return (
+    <div className="max-w-6xl mx-auto">
+      <div className="bg-white rounded-lg overflow-hidden shadow-xl">
+        {/* Photo */}
+        <div className="relative">
+          <img
+            src={photos[currentPhoto]}
+            alt={`Street photography ${currentPhoto + 1}`}
+            className="w-full h-[75vh] object-cover"
+          />
+          
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevPhoto}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 text-black rounded-full p-3 hover:bg-white transition-colors shadow-lg"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            onClick={nextPhoto}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 text-black rounded-full p-3 hover:bg-white transition-colors shadow-lg"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Counter and Dots */}
+        <div className="p-4 bg-white">
+          <div className="flex justify-between items-center mb-3">
+            <h3 className="text-lg font-semibold text-blue-900">Street Photography</h3>
+            <span className="text-gray-600 text-sm">
+              {currentPhoto + 1} / {photos.length}
+            </span>
+          </div>
+          
+          {/* Thumbnail Dots */}
+          <div className="flex justify-center gap-2 overflow-x-auto pb-2">
+            {photos.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentPhoto(idx)}
+                className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
+                  idx === currentPhoto ? 'bg-blue-900 w-6' : 'bg-gray-300'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Automation Card Component
 const AutomationCard = ({ title, summary, problem, tools, impact }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -164,6 +248,9 @@ export default function LightBluePortfolio() {
   const [daysSaved, setDaysSaved] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [storyPage1, setStoryPage1] = useState(0);
+  const [storyPage2, setStoryPage2] = useState(0);
+  const [storyPage3, setStoryPage3] = useState(0);
 
   const carouselItems = [
     'Sonal Misra',
@@ -310,10 +397,25 @@ export default function LightBluePortfolio() {
       caption: 'Street photography', 
       insight: 'Composition teaches you what to emphasize',
       photos: [
-        // Add your photo URLs here, for example:
-        // '/photos/street1.jpg',
-        // '/photos/street2.jpg',
-        // '/photos/street3.jpg'
+        '/photos/street1.JPG', '/photos/street2.JPG', '/photos/street3.JPG', '/photos/street4.JPG', '/photos/street5.JPG',
+        '/photos/street6.JPG', '/photos/street7.JPG', '/photos/street8.JPG', '/photos/street9.JPG', '/photos/street10.JPG',
+        '/photos/street11.JPG', '/photos/street12.JPG', '/photos/street13.JPG', '/photos/street14.JPG', '/photos/street15.JPG',
+        '/photos/street16.JPG', '/photos/street17.JPG', '/photos/street18.JPG', '/photos/street19.JPG', '/photos/street20.JPG',
+        '/photos/street21.JPG', '/photos/street22.JPG', '/photos/street23.JPG', '/photos/street24.JPG', '/photos/street25.JPG',
+        '/photos/street26.JPG', '/photos/street27.JPG', '/photos/street28.JPG', '/photos/street29.JPG', '/photos/street30.JPG',
+        '/photos/street31.JPG', '/photos/street32.JPG', '/photos/street33.JPG', '/photos/street34.JPG', '/photos/street35.JPG',
+        '/photos/street36.JPG', '/photos/street37.JPG', '/photos/street38.JPG', '/photos/street39.JPG', '/photos/street40.JPG',
+        '/photos/street41.JPG', '/photos/street42.JPG', '/photos/street43.JPG', '/photos/street44.JPG', '/photos/street45.JPG',
+        '/photos/street46.JPG', '/photos/street47.JPG', '/photos/street48.JPG', '/photos/street49.JPG', '/photos/street50.JPG',
+        '/photos/street51.JPG', '/photos/street52.JPG', '/photos/street53.JPG', '/photos/street54.JPG', '/photos/street55.JPG',
+        '/photos/street56.JPG', '/photos/street57.JPG', '/photos/street58.JPG', '/photos/street59.JPG', '/photos/street60.JPG',
+        '/photos/street61.JPG', '/photos/street62.JPG', '/photos/street63.JPG', '/photos/street64.JPG', '/photos/street65.JPG',
+        '/photos/street66.JPG', '/photos/street67.JPG', '/photos/street68.JPG', '/photos/street69.JPG', '/photos/street70.JPG',
+        '/photos/street71.JPG', '/photos/street72.JPG', '/photos/street73.JPG', '/photos/street74.JPG', '/photos/street75.JPG',
+        '/photos/street76.JPG', '/photos/street77.JPG', '/photos/street78.JPG', '/photos/street79.JPG', '/photos/street80.JPG',
+        '/photos/street81.JPG', '/photos/street82.JPG', '/photos/street83.JPG', '/photos/street84.JPG', '/photos/street85.JPG',
+        '/photos/street86.JPG', '/photos/street87.JPG', '/photos/street88.JPG', '/photos/street89.JPG', '/photos/street90.JPG',
+        '/photos/street91.JPG'
       ]
     }
   ];
@@ -348,17 +450,20 @@ export default function LightBluePortfolio() {
     );
   };
 
-  const StoryCard = ({ title, subtitle, problem, system, howItWorks, whyItMatters, tools }) => {
-    const [currentPage, setCurrentPage] = useState(0);
+  const StoryCard = React.memo(({ title, subtitle, problem, system, howItWorks, whyItMatters, tools, currentPage, setCurrentPage }) => {
     const pages = ['problem', 'system', 'how', 'why'];
 
-    const nextPage = () => {
+    const nextPage = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (currentPage < pages.length - 1) {
         setCurrentPage(currentPage + 1);
       }
     };
 
-    const prevPage = () => {
+    const prevPage = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (currentPage > 0) {
         setCurrentPage(currentPage - 1);
       }
@@ -373,7 +478,7 @@ export default function LightBluePortfolio() {
         </div>
 
         {/* Book Pages */}
-        <div className="relative bg-gradient-to-br from-amber-50 to-yellow-50 min-h-96">
+        <div className="relative bg-white min-h-96">
           {/* Page Content */}
           <div className="p-8">
             {/* Page Number Indicator */}
@@ -388,9 +493,8 @@ export default function LightBluePortfolio() {
 
             {/* Page 1: The Problem */}
             {currentPage === 0 && (
-              <div className="animate-page-turn">
+              <div key="page-0">
                 <div className="flex items-start gap-3 mb-4">
-                  <span className="text-4xl">❗</span>
                   <h4 className="text-2xl font-bold text-blue-900">The Problem</h4>
                 </div>
                 <p className="text-gray-800 text-lg leading-relaxed italic border-l-4 border-blue-900 pl-4">
@@ -401,9 +505,8 @@ export default function LightBluePortfolio() {
 
             {/* Page 2: The System */}
             {currentPage === 1 && (
-              <div className="animate-page-turn">
+              <div key="page-1">
                 <div className="flex items-start gap-3 mb-4">
-                  <span className="text-4xl">⚙️</span>
                   <h4 className="text-2xl font-bold text-blue-900">The System</h4>
                 </div>
                 <p className="text-gray-800 text-lg leading-relaxed border-l-4 border-blue-900 pl-4">
@@ -414,9 +517,8 @@ export default function LightBluePortfolio() {
 
             {/* Page 3: How It Works */}
             {currentPage === 2 && (
-              <div className="animate-page-turn">
+              <div key="page-2">
                 <div className="flex items-start gap-3 mb-4">
-                  <span className="text-4xl">🔄</span>
                   <h4 className="text-2xl font-bold text-blue-900">How It Works</h4>
                 </div>
                 <div className="space-y-4">
@@ -434,9 +536,8 @@ export default function LightBluePortfolio() {
 
             {/* Page 4: Why It Matters */}
             {currentPage === 3 && (
-              <div className="animate-page-turn">
+              <div key="page-3">
                 <div className="flex items-start gap-3 mb-4">
-                  <span className="text-4xl">✨</span>
                   <h4 className="text-2xl font-bold text-blue-900">Why It Matters</h4>
                 </div>
                 <p className="text-gray-800 text-lg leading-relaxed mb-6 border-l-4 border-blue-900 pl-4">
@@ -459,16 +560,18 @@ export default function LightBluePortfolio() {
           {/* Navigation Controls */}
           <div className="absolute bottom-6 left-0 right-0 flex justify-between px-8">
             <button
+              type="button"
               onClick={prevPage}
               disabled={currentPage === 0}
-              className="px-6 py-2 bg-blue-900 text-white font-semibold rounded-lg disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-2"
+              className="px-4 py-1 text-sm bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1"
             >
               <span>←</span> Previous
             </button>
             <button
+              type="button"
               onClick={nextPage}
               disabled={currentPage === pages.length - 1}
-              className="px-6 py-2 bg-blue-900 text-white font-semibold rounded-lg disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-2"
+              className="px-4 py-1 text-sm bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1"
             >
               Next <span>→</span>
             </button>
@@ -476,7 +579,7 @@ export default function LightBluePortfolio() {
         </div>
       </div>
     );
-  };
+  });
 
   const ProjectCard = ({ title, description, location, outcome, tools, whatItIs, problem, system, impact }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -673,11 +776,12 @@ export default function LightBluePortfolio() {
         <div className="max-w-4xl text-center relative z-10">
           {/* Profile Photo */}
           <div className="mb-8 flex justify-center">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-900 shadow-xl bg-gradient-to-br from-blue-100 to-blue-200">
-              {/* Placeholder - user should replace with actual image */}
-              <div className="w-full h-full flex items-center justify-center text-6xl">
-                👤
-              </div>
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-900 shadow-xl">
+              <img 
+                src="/profile.jpg" 
+                alt="Sonal Misra"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           
@@ -987,12 +1091,7 @@ export default function LightBluePortfolio() {
       <section className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-5xl font-bold text-blue-900 mb-4 flex items-center gap-3">
-            <span className="relative inline-block">
-              <span className="text-6xl animate-party-pop">🎉</span>
-              <span className="streamer streamer-1"></span>
-              <span className="streamer streamer-2"></span>
-              <span className="streamer streamer-3"></span>
-            </span>
+            <span className="text-6xl animate-hammer-hit">🔨</span>
             <span>What I'd Build Next</span>
           </h2>
           <p className="text-xl text-gray-600 mb-16">Three systems I'd automate if I ran product marketing.</p>
@@ -1000,6 +1099,7 @@ export default function LightBluePortfolio() {
           <div className="space-y-8">
             {/* Story 1: Product Launch Command Center */}
             <StoryCard
+              key="story-1"
               title="Product Launch Command Center"
               subtitle="One place to plan, track, and measure every launch"
               problem="Product launches lived across decks, documents, emails, and meetings, making ownership unclear and performance hard to track."
@@ -1008,14 +1108,17 @@ export default function LightBluePortfolio() {
                 'A standardized launch intake form captures key inputs (product, audience, timeline, goals)',
                 'Submission triggers automated creation of launch tasks and owners across teams',
                 'Milestones and dependencies are tracked in a shared workspace',
-                'Launch status and KPIs are updated automatically as execution progresses'
+                'Launch progress auto-updates status and KPIs in real time'
               ]}
               whyItMatters="Improves launch consistency, reduces manual coordination, and gives leadership clear visibility into launch readiness and impact."
               tools={['Power Automate', 'Microsoft Forms', 'SharePoint', 'Planner', 'Teams']}
+              currentPage={storyPage1}
+              setCurrentPage={setStoryPage1}
             />
 
             {/* Story 2: Launch KPI Auto-Tracker */}
             <StoryCard
+              key="story-2"
               title="Launch KPI Auto-Tracker"
               subtitle="Stop manually reporting—let the data tell the story"
               problem="Post-launch performance data was scattered across tools, requiring manual reporting to understand what worked and what didn't."
@@ -1028,10 +1131,13 @@ export default function LightBluePortfolio() {
               ]}
               whyItMatters="Enables PMMs to quickly evaluate launch success, adjust messaging or strategy, and communicate performance with confidence."
               tools={['Power Automate', 'Salesforce', 'Excel / Power BI', 'SharePoint']}
+              currentPage={storyPage2}
+              setCurrentPage={setStoryPage2}
             />
 
             {/* Story 3: Deal-Triggered Sales Enablement */}
             <StoryCard
+              key="story-3"
               title="Deal-Triggered Sales Enablement"
               subtitle="The right message, at the right stage, automatically"
               problem="Sales teams didn't always have the right messaging or assets at the right stage of the buying process."
@@ -1044,6 +1150,8 @@ export default function LightBluePortfolio() {
               ]}
               whyItMatters="Improves message consistency, reduces friction for Sales, and ensures PMM strategy shows up where it matters most—inside active deals."
               tools={['Power Automate', 'Salesforce', 'Outlook / Teams', 'SharePoint']}
+              currentPage={storyPage3}
+              setCurrentPage={setStoryPage3}
             />
           </div>
         </div>
@@ -1098,49 +1206,8 @@ Sonal has shown steady growth in her ability to approach challenges thoughtfully
           </h2>
           <p className="text-xl text-gray-600 mb-12">Everything I do outside work makes me better at it.</p>
           
-          <div className="flex justify-center">
-            <div className="w-64">
-            {offHours.map((item, idx) => (
-              <div 
-                key={idx}
-                className="relative"
-              >
-                {/* Main Tile */}
-                <div 
-                  className="aspect-square bg-white rounded-lg flex items-center justify-center cursor-pointer hover:bg-blue-900 hover:text-white transition-all group border border-blue-100 hover:border-blue-900"
-                  onClick={() => setSelectedImage(selectedImage === idx ? null : idx)}
-                >
-                  {selectedImage !== idx ? (
-                    <div className="text-center">
-                      <div className="text-6xl mb-2">{item.image}</div>
-                      <div className="text-sm font-semibold">{item.caption}</div>
-                      {item.photos && item.photos.length > 0 && (
-                        <div className="text-xs mt-2 opacity-70">Click to view photos</div>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="text-center p-4">
-                      <div className="text-sm font-semibold mb-2">{item.caption}</div>
-                      <div className="text-xs">{item.insight}</div>
-                      {item.photos && item.photos.length > 0 && (
-                        <div className="text-xs mt-3 font-semibold">📷 {item.photos.length} photos</div>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                {/* Photo Carousel Modal */}
-                {selectedImage === idx && item.photos && item.photos.length > 0 && (
-                  <PhotoCarousel 
-                    photos={item.photos} 
-                    caption={item.caption}
-                    onClose={() => setSelectedImage(null)}
-                  />
-                )}
-              </div>
-            ))}
-            </div>
-          </div>
+          {/* Embedded Photo Carousel */}
+          <EmbeddedCarousel photos={offHours[0].photos} />
           
           {/* Blog Link */}
           <div className="mt-12 text-center">
@@ -1173,14 +1240,42 @@ Sonal has shown steady growth in her ability to approach challenges thoughtfully
               s22misra@uwaterloo.ca
             </a>
             <span className="text-gray-400">•</span>
-            <a href="https://linkedin.com/in/sonalmisra" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-cyan-300 transition-colors">
-              linkedin.com/in/sonalmisra
+            <a href="https://www.linkedin.com/in/sonal-misra-3807901bb/" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-cyan-300 transition-colors">
+              linkedin.com/in/sonal-misra
             </a>
           </div>
         </div>
       </section>
 
       <style jsx>{`
+        .cloud {
+          position: absolute;
+          font-size: 4rem;
+          opacity: 0.4;
+        }
+        .cloud-1 {
+          top: 10%;
+          left: -100px;
+          animation: cloud-1 80s linear infinite;
+        }
+        .cloud-2 {
+          top: 30%;
+          animation: cloud-2 100s linear infinite;
+        }
+        .cloud-3 {
+          top: 60%;
+          left: -100px;
+          animation: cloud-3 90s linear infinite;
+        }
+        .cloud-4 {
+          top: 80%;
+          animation: cloud-4 110s linear infinite;
+        }
+        .cloud-5 {
+          top: 45%;
+          left: -100px;
+          animation: cloud-5 95s linear infinite;
+        }
         @keyframes cloud-1 {
           0% { transform: translateX(0); }
           100% { transform: translateX(calc(100vw + 400px)); }
