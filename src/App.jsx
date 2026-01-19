@@ -778,7 +778,7 @@ export default function LightBluePortfolio() {
           <div className="mb-8 flex justify-center">
             <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-900 shadow-xl">
               <img 
-                src="/sonal.jpg" 
+                src="/photos/sonal.JPG" 
                 alt="Sonal Misra"
                 className="w-full h-full object-cover"
               />
