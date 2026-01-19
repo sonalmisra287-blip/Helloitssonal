@@ -218,6 +218,156 @@ const AutomationCard = ({ title, summary, problem, tools, impact }) => {
   );
 };
 
+// ProjectCard Component - Defined outside to prevent re-renders
+const ProjectCard = ({ title, description, location, outcome, tools, whatItIs, problem, system, impact }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [activeTab, setActiveTab] = useState('what');
+
+  return (
+    <div 
+      className={`bg-white rounded-lg shadow-md border border-blue-100 overflow-hidden transition-all duration-500 ${isExpanded ? 'shadow-xl' : 'hover:shadow-lg'}`}
+    >
+      {/* Collapsed State */}
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
+            <p className="text-gray-700 mb-1">{description}</p>
+            <p className="text-sm text-gray-500">{location}</p>
+          </div>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsExpanded(!isExpanded);
+            }}
+            className="flex-shrink-0 mt-2 p-2 hover:bg-blue-50 rounded-full transition-colors"
+          >
+            <ChevronDown className={`w-6 h-6 text-blue-900 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+          </button>
+        </div>
+        
+        <div className="flex items-center gap-3 mb-3">
+          <span className="text-lg font-bold text-blue-900">{outcome}</span>
+        </div>
+        
+        <div className="flex items-center gap-2 flex-wrap mb-3">
+          {tools.map((tool, i) => (
+            <span key={i} className="px-3 py-1 bg-blue-100 text-blue-900 text-xs font-semibold rounded-full">
+              {tool}
+            </span>
+          ))}
+        </div>
+        
+        {!isExpanded && (
+          <button 
+            onClick={() => setIsExpanded(true)}
+            className="flex items-center text-blue-900 font-semibold text-sm hover:translate-x-1 transition-transform cursor-pointer"
+          >
+            View details <ChevronRight className="w-4 h-4 ml-1" />
+          </button>
+        )}
+      </div>
+
+      {/* Expanded State */}
+      {isExpanded && (
+        <div 
+          className="border-t border-blue-100 animate-unfold"
+          style={{
+            animation: 'unfold 0.5s ease-out'
+          }}
+        >
+          {/* Tabs */}
+          <div className="flex border-b border-blue-100 bg-blue-50">
+            <button
+              onClick={() => setActiveTab('what')}
+              className={`flex-1 px-6 py-3 font-semibold transition-colors ${
+                activeTab === 'what' 
+                  ? 'bg-white text-blue-900 border-b-2 border-blue-900' 
+                  : 'text-gray-600 hover:text-blue-900'
+              }`}
+            >
+              What it is
+            </button>
+            <button
+              onClick={() => setActiveTab('problem')}
+              className={`flex-1 px-6 py-3 font-semibold transition-colors ${
+                activeTab === 'problem' 
+                  ? 'bg-white text-blue-900 border-b-2 border-blue-900' 
+                  : 'text-gray-600 hover:text-blue-900'
+              }`}
+            >
+              The problem
+            </button>
+            <button
+              onClick={() => setActiveTab('system')}
+              className={`flex-1 px-6 py-3 font-semibold transition-colors ${
+                activeTab === 'system' 
+                  ? 'bg-white text-blue-900 border-b-2 border-blue-900' 
+                  : 'text-gray-600 hover:text-blue-900'
+              }`}
+            >
+              The system
+            </button>
+          </div>
+
+          {/* Tab Content */}
+          <div className="p-6">
+            {activeTab === 'what' && (
+              <div className="text-gray-700 text-lg leading-relaxed">
+                {whatItIs}
+              </div>
+            )}
+            
+            {activeTab === 'problem' && (
+              <ul className="text-gray-700 space-y-2">
+                {problem.map((item, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-blue-900 mr-2">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            
+            {activeTab === 'system' && (
+              <ul className="text-gray-700 space-y-2">
+                {system.map((item, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-blue-900 mr-2">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Impact - Always Visible */}
+          <div className="px-6 pb-6">
+            <div className="bg-green-50 p-4 rounded border-l-4 border-green-600">
+              <h4 className="font-bold text-green-900 mb-3">Impact</h4>
+              <div className="space-y-2 text-gray-700">
+                {impact.map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Close Button */}
+          <div className="px-6 pb-6">
+            <button
+              onClick={() => setIsExpanded(false)}
+              className="w-full px-6 py-3 border-2 border-blue-900 text-blue-900 font-semibold rounded hover:bg-blue-900 hover:text-white transition-all"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default function LightBluePortfolio() {
   const [scrollY, setScrollY] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -562,155 +712,6 @@ export default function LightBluePortfolio() {
       </div>
     );
   });
-
-  const ProjectCard = ({ title, description, location, outcome, tools, whatItIs, problem, system, impact }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [activeTab, setActiveTab] = useState('what');
-
-    return (
-      <div 
-        className={`bg-white rounded-lg shadow-md border border-blue-100 overflow-hidden transition-all duration-500 ${isExpanded ? 'shadow-xl' : 'hover:shadow-lg'}`}
-      >
-        {/* Collapsed State */}
-        <div className="p-6">
-          <div className="flex items-start justify-between gap-4 mb-3">
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
-              <p className="text-gray-700 mb-1">{description}</p>
-              <p className="text-sm text-gray-500">{location}</p>
-            </div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsExpanded(!isExpanded);
-              }}
-              className="flex-shrink-0 mt-2 p-2 hover:bg-blue-50 rounded-full transition-colors"
-            >
-              <ChevronDown className={`w-6 h-6 text-blue-900 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
-            </button>
-          </div>
-          
-          <div className="flex items-center gap-3 mb-3">
-            <span className="text-lg font-bold text-blue-900">{outcome}</span>
-          </div>
-          
-          <div className="flex items-center gap-2 flex-wrap mb-3">
-            {tools.map((tool, i) => (
-              <span key={i} className="px-3 py-1 bg-blue-100 text-blue-900 text-xs font-semibold rounded-full">
-                {tool}
-              </span>
-            ))}
-          </div>
-          
-          {!isExpanded && (
-            <button 
-              onClick={() => setIsExpanded(true)}
-              className="flex items-center text-blue-900 font-semibold text-sm hover:translate-x-1 transition-transform cursor-pointer"
-            >
-              View details <ChevronRight className="w-4 h-4 ml-1" />
-            </button>
-          )}
-        </div>
-
-        {/* Expanded State */}
-        {isExpanded && (
-          <div 
-            className="border-t border-blue-100 animate-unfold"
-            style={{
-              animation: 'unfold 0.5s ease-out'
-            }}
-          >
-            {/* Tabs */}
-            <div className="flex border-b border-blue-100 bg-blue-50">
-              <button
-                onClick={() => setActiveTab('what')}
-                className={`flex-1 px-6 py-3 font-semibold transition-colors ${
-                  activeTab === 'what' 
-                    ? 'bg-white text-blue-900 border-b-2 border-blue-900' 
-                    : 'text-gray-600 hover:text-blue-900'
-                }`}
-              >
-                What it is
-              </button>
-              <button
-                onClick={() => setActiveTab('problem')}
-                className={`flex-1 px-6 py-3 font-semibold transition-colors ${
-                  activeTab === 'problem' 
-                    ? 'bg-white text-blue-900 border-b-2 border-blue-900' 
-                    : 'text-gray-600 hover:text-blue-900'
-                }`}
-              >
-                The problem
-              </button>
-              <button
-                onClick={() => setActiveTab('system')}
-                className={`flex-1 px-6 py-3 font-semibold transition-colors ${
-                  activeTab === 'system' 
-                    ? 'bg-white text-blue-900 border-b-2 border-blue-900' 
-                    : 'text-gray-600 hover:text-blue-900'
-                }`}
-              >
-                The system
-              </button>
-            </div>
-
-            {/* Tab Content */}
-            <div className="p-6">
-              {activeTab === 'what' && (
-                <div className="text-gray-700 text-lg leading-relaxed">
-                  {whatItIs}
-                </div>
-              )}
-              
-              {activeTab === 'problem' && (
-                <ul className="text-gray-700 space-y-2">
-                  {problem.map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-blue-900 mr-2">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              
-              {activeTab === 'system' && (
-                <ul className="text-gray-700 space-y-2">
-                  {system.map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-blue-900 mr-2">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-
-            {/* Impact - Always Visible */}
-            <div className="px-6 pb-6">
-              <div className="bg-green-50 p-4 rounded border-l-4 border-green-600">
-                <h4 className="font-bold text-green-900 mb-3">Impact</h4>
-                <div className="space-y-2 text-gray-700">
-                  {impact.map((item, i) => (
-                    <p key={i}>{item}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Close Button */}
-            <div className="px-6 pb-6">
-              <button
-                onClick={() => setIsExpanded(false)}
-                className="w-full px-6 py-3 border-2 border-blue-900 text-blue-900 font-semibold rounded hover:bg-blue-900 hover:text-white transition-all"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
 
   return (
     <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100 text-gray-900 font-sans relative overflow-x-hidden">
