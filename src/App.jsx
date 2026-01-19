@@ -368,6 +368,122 @@ const ProjectCard = ({ title, description, location, outcome, tools, whatItIs, p
   );
 };
 
+// StoryCard Component - Defined outside to prevent re-renders
+const StoryCard = ({ title, subtitle, problem, system, howItWorks, whyItMatters, tools, currentPage, setCurrentPage }) => {
+  const pages = ['problem', 'system', 'how', 'why'];
+
+  return (
+    <div className="bg-white rounded-lg shadow-lg border-2 border-blue-200 overflow-hidden">
+      {/* Book Cover/Title */}
+      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-6">
+        <h3 className="text-2xl font-bold mb-2">{title}</h3>
+        <p className="text-blue-100 text-sm">{subtitle}</p>
+      </div>
+
+      {/* Book Pages */}
+      <div className="relative bg-white min-h-96">
+        {/* Page Content */}
+        <div className="p-8">
+          {/* Page Number Indicator */}
+          <div className="flex justify-center gap-2 mb-6">
+            {pages.map((_, idx) => (
+              <div
+                key={idx}
+                className={`h-2 flex-1 rounded ${idx === currentPage ? 'bg-blue-900' : 'bg-gray-300'}`}
+              />
+            ))}
+          </div>
+
+          {/* Page 1: The Problem */}
+          {currentPage === 0 && (
+            <div>
+              <div className="flex items-start gap-3 mb-4">
+                <h4 className="text-2xl font-bold text-blue-900">The Problem</h4>
+              </div>
+              <p className="text-gray-800 text-2xl leading-relaxed italic border-l-4 border-blue-900 pl-4">
+                "{problem}"
+              </p>
+            </div>
+          )}
+
+          {/* Page 2: The System */}
+          {currentPage === 1 && (
+            <div>
+              <div className="flex items-start gap-3 mb-4">
+                <h4 className="text-2xl font-bold text-blue-900">The System</h4>
+              </div>
+              <p className="text-gray-800 text-xl leading-relaxed border-l-4 border-blue-900 pl-4">
+                {system}
+              </p>
+            </div>
+          )}
+
+          {/* Page 3: How It Works */}
+          {currentPage === 2 && (
+            <div>
+              <div className="flex items-start gap-3 mb-4">
+                <h4 className="text-2xl font-bold text-blue-900">How It Works</h4>
+              </div>
+              <div className="space-y-4">
+                {howItWorks.map((step, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">
+                      {idx + 1}
+                    </div>
+                    <p className="text-gray-800 text-lg pt-1">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Page 4: Why It Matters */}
+          {currentPage === 3 && (
+            <div>
+              <div className="flex items-start gap-3 mb-4">
+                <h4 className="text-2xl font-bold text-blue-900">Why It Matters</h4>
+              </div>
+              <p className="text-gray-800 text-xl leading-relaxed mb-6 border-l-4 border-blue-900 pl-4">
+                {whyItMatters}
+              </p>
+              <div className="mt-6 pt-6 border-t border-blue-200">
+                <p className="text-sm font-semibold text-gray-700 mb-3">Built with:</p>
+                <div className="flex flex-wrap gap-2">
+                  {tools.map((tool, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-blue-900 text-white text-xs font-semibold rounded-full">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Navigation Controls */}
+        <div className="absolute bottom-6 left-0 right-0 flex justify-between px-8">
+          <button
+            type="button"
+            onClick={() => currentPage > 0 && setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 0}
+            className="px-4 py-2 text-sm bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1 cursor-pointer"
+          >
+            <span>←</span> Previous
+          </button>
+          <button
+            type="button"
+            onClick={() => currentPage < pages.length - 1 && setCurrentPage(currentPage + 1)}
+            disabled={currentPage === pages.length - 1}
+            className="px-4 py-2 text-sm bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1 cursor-pointer"
+          >
+            Next <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function LightBluePortfolio() {
   const [scrollY, setScrollY] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -596,137 +712,6 @@ export default function LightBluePortfolio() {
       </div>
     );
   };
-
-  const StoryCard = React.memo(({ title, subtitle, problem, system, howItWorks, whyItMatters, tools, currentPage, setCurrentPage }) => {
-    const pages = ['problem', 'system', 'how', 'why'];
-
-    const nextPage = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (currentPage < pages.length - 1) {
-        setCurrentPage(currentPage + 1);
-      }
-    };
-
-    const prevPage = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (currentPage > 0) {
-        setCurrentPage(currentPage - 1);
-      }
-    };
-
-    return (
-      <div className="bg-white rounded-lg shadow-lg border-2 border-blue-200 overflow-hidden">
-        {/* Book Cover/Title */}
-        <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-6">
-          <h3 className="text-2xl font-bold mb-2">{title}</h3>
-          <p className="text-blue-100 text-sm">{subtitle}</p>
-        </div>
-
-        {/* Book Pages */}
-        <div className="relative bg-white min-h-96">
-          {/* Page Content */}
-          <div className="p-8">
-            {/* Page Number Indicator */}
-            <div className="flex justify-center gap-2 mb-6">
-              {pages.map((_, idx) => (
-                <div
-                  key={idx}
-                  className={`h-2 flex-1 rounded ${idx === currentPage ? 'bg-blue-900' : 'bg-gray-300'}`}
-                />
-              ))}
-            </div>
-
-            {/* Page 1: The Problem */}
-            {currentPage === 0 && (
-              <div key="page-0">
-                <div className="flex items-start gap-3 mb-4">
-                  <h4 className="text-2xl font-bold text-blue-900">The Problem</h4>
-                </div>
-                <p className="text-gray-800 text-2xl leading-relaxed italic border-l-4 border-blue-900 pl-4">
-                  "{problem}"
-                </p>
-              </div>
-            )}
-
-            {/* Page 2: The System */}
-            {currentPage === 1 && (
-              <div key="page-1">
-                <div className="flex items-start gap-3 mb-4">
-                  <h4 className="text-2xl font-bold text-blue-900">The System</h4>
-                </div>
-                <p className="text-gray-800 text-xl leading-relaxed border-l-4 border-blue-900 pl-4">
-                  {system}
-                </p>
-              </div>
-            )}
-
-            {/* Page 3: How It Works */}
-            {currentPage === 2 && (
-              <div key="page-2">
-                <div className="flex items-start gap-3 mb-4">
-                  <h4 className="text-2xl font-bold text-blue-900">How It Works</h4>
-                </div>
-                <div className="space-y-4">
-                  {howItWorks.map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">
-                        {idx + 1}
-                      </div>
-                      <p className="text-gray-800 text-lg pt-1">{step}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Page 4: Why It Matters */}
-            {currentPage === 3 && (
-              <div key="page-3">
-                <div className="flex items-start gap-3 mb-4">
-                  <h4 className="text-2xl font-bold text-blue-900">Why It Matters</h4>
-                </div>
-                <p className="text-gray-800 text-xl leading-relaxed mb-6 border-l-4 border-blue-900 pl-4">
-                  {whyItMatters}
-                </p>
-                <div className="mt-6 pt-6 border-t border-blue-200">
-                  <p className="text-sm font-semibold text-gray-700 mb-3">Built with:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {tools.map((tool, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-blue-900 text-white text-xs font-semibold rounded-full">
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Navigation Controls */}
-          <div className="absolute bottom-6 left-0 right-0 flex justify-between px-8">
-            <button
-              type="button"
-              onClick={prevPage}
-              disabled={currentPage === 0}
-              className="px-4 py-1 text-sm bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1"
-            >
-              <span>←</span> Previous
-            </button>
-            <button
-              type="button"
-              onClick={nextPage}
-              disabled={currentPage === pages.length - 1}
-              className="px-4 py-1 text-sm bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1"
-            >
-              Next <span>→</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  });
 
   return (
     <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100 text-gray-900 font-sans relative overflow-x-hidden">
