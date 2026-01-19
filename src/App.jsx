@@ -434,15 +434,29 @@ export default function LightBluePortfolio() {
   }, [hasAnimated]);
 
   useEffect(() => {
-    if (hasAnimated && timeSaved < 22) {
-      const timer = setTimeout(() => setTimeSaved(timeSaved + 1), 80);
+    if (hasAnimated) {
+      const timer = setTimeout(() => {
+        if (timeSaved < 22) {
+          setTimeSaved(timeSaved + 1);
+        } else {
+          // Reset after a pause
+          setTimeout(() => setTimeSaved(0), 2000);
+        }
+      }, 80);
       return () => clearTimeout(timer);
     }
   }, [timeSaved, hasAnimated]);
 
   useEffect(() => {
-    if (hasAnimated && daysSaved < 3) {
-      const timer = setTimeout(() => setDaysSaved(daysSaved + 1), 500);
+    if (hasAnimated) {
+      const timer = setTimeout(() => {
+        if (daysSaved < 3) {
+          setDaysSaved(daysSaved + 1);
+        } else {
+          // Reset after a pause
+          setTimeout(() => setDaysSaved(0), 2000);
+        }
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [daysSaved, hasAnimated]);
