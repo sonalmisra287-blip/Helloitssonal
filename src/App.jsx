@@ -614,6 +614,8 @@ export default function LightBluePortfolio() {
       year: '2025',
       title: 'Customer Engagement Marketing Coordinator',
       company: 'PointClickCare',
+      logo: '/photos/pcc-logo.png',
+      description: 'I worked on customer marketing campaigns, automations, and surveys to get users more engaged and excited about the product. I learned how to use data and AI to move faster, scale campaigns, and build processes that actually make life easier.',
       context: 'SaaS healthcare platform, scaling customer engagement and adoption',
       problem: 'Low survey response rates, manual campaign work eating team time, slow asset approval cycles',
       ownership: 'Led customer activation, AI automation, and process innovation initiatives',
@@ -624,6 +626,8 @@ export default function LightBluePortfolio() {
       year: '2024',
       title: 'Customer Success Intern',
       company: 'PointClickCare',
+      logo: '/photos/pcc-logo.png',
+      description: 'I helped bring inactive customers back through targeted emails, content, and data cleanup projects. This role taught me how customer insights, analytics, and collaboration across teams directly impact retention and revenue.',
       context: 'Healthcare SaaS, managing customer data and engagement campaigns',
       problem: '2,000+ forwarding contacts lost in auto-reply emails, low engagement from dormant customers',
       ownership: 'Built lead data automation, reactivation campaigns, and first Pharmacy digest',
@@ -634,6 +638,7 @@ export default function LightBluePortfolio() {
       year: '2023',
       title: 'HR Corporate & Community Affairs Intern',
       company: 'Fidelity Investments',
+      description: 'I created internal content and helped improve employee platforms to make communication more engaging and accessible. I learned how internal storytelling, data, and community initiatives shape culture at a large organization.',
       context: '2,000+ employees, improving internal comms and engagement',
       problem: 'Low intranet engagement, unclear company achievements visibility',
       ownership: 'Led content optimization and CSR initiative coordination',
@@ -644,6 +649,7 @@ export default function LightBluePortfolio() {
       year: '2023',
       title: 'Business Operations Intern',
       company: 'Fidelity Investments',
+      description: 'I worked behind the scenes in the registered products team, handling things like withdrawals, contributions, and RESPs to help everything run smoothly and faster. Along the way, I dug into reports, tracked transfer requests, and learned how paying attention to the small details can make a big difference in both decision-making and customer experience.',
       context: 'Registered products department, high-volume processing operations',
       problem: 'Slow processing times, delayed transfer requests impacting customer satisfaction',
       ownership: 'Streamlined processing workflows and monitored transfer operations',
@@ -843,24 +849,33 @@ export default function LightBluePortfolio() {
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative">
                 <div className="absolute -left-14 w-6 h-6 bg-blue-900 rounded-full border-4 border-white" />
+                <div className="absolute -left-28 top-0 text-lg font-bold text-blue-900">{exp.year}</div>
                 <div 
                   className="bg-white p-6 rounded-lg shadow-md cursor-pointer hover:shadow-xl transition-shadow border border-blue-100"
                   onClick={() => setExpandedRole(expandedRole === idx ? null : idx)}
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      <div className="text-sm font-bold text-blue-900 mb-1">{exp.year}</div>
+                      {exp.logo && (
+                        <img src={exp.logo} alt={exp.company} className="w-12 h-12 object-contain mb-2 rounded-lg" />
+                      )}
                       <h3 className="text-2xl font-bold mb-1">{exp.title}</h3>
                       <p className="text-gray-600">{exp.company}</p>
                       {expandedRole !== idx && (
-                        <div className="mt-3 flex gap-2 flex-wrap">
-                          {exp.impact.map((metric, i) => (
-                            <span key={i} className="text-sm font-bold text-blue-900">{metric}</span>
-                          ))}
-                        </div>
+                        <>
+                          {exp.description ? (
+                            <p className="mt-3 text-gray-700">{exp.description}</p>
+                          ) : (
+                            <div className="mt-3 flex gap-2 flex-wrap">
+                              {exp.impact.map((metric, i) => (
+                                <span key={i} className="text-sm font-bold text-blue-900">{metric}</span>
+                              ))}
+                            </div>
+                          )}
+                        </>
                       )}
                     </div>
-                    <ChevronDown className={`w-6 h-6 text-blue-900 transition-transform ${expandedRole === idx ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-8 h-8 text-blue-900 transition-transform ${expandedRole === idx ? 'rotate-180' : ''}`} />
                   </div>
                   
                   {expandedRole === idx && (
