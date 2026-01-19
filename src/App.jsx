@@ -122,13 +122,13 @@ const EmbeddedCarousel = ({ photos }) => {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="bg-white rounded-lg overflow-hidden shadow-xl">
+      <div className="rounded-lg overflow-hidden shadow-xl">
         {/* Photo */}
         <div className="relative">
           <img
             src={photos[currentPhoto]}
             alt={`Street photography ${currentPhoto + 1}`}
-            className="w-full h-[75vh] object-cover"
+            className="w-full h-[85vh] object-cover"
           />
           
           {/* Navigation Arrows */}
@@ -148,28 +148,10 @@ const EmbeddedCarousel = ({ photos }) => {
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
-        </div>
-
-        {/* Counter and Dots */}
-        <div className="p-4 bg-white">
-          <div className="flex justify-between items-center mb-3">
-            <h3 className="text-lg font-semibold text-blue-900">Street Photography</h3>
-            <span className="text-gray-600 text-sm">
-              {currentPhoto + 1} / {photos.length}
-            </span>
-          </div>
           
-          {/* Thumbnail Dots */}
-          <div className="flex justify-center gap-2 overflow-x-auto pb-2">
-            {photos.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentPhoto(idx)}
-                className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
-                  idx === currentPhoto ? 'bg-blue-900 w-6' : 'bg-gray-300'
-                }`}
-              />
-            ))}
+          {/* Counter overlay */}
+          <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+            {currentPhoto + 1} / {photos.length}
           </div>
         </div>
       </div>
@@ -497,7 +479,7 @@ export default function LightBluePortfolio() {
                 <div className="flex items-start gap-3 mb-4">
                   <h4 className="text-2xl font-bold text-blue-900">The Problem</h4>
                 </div>
-                <p className="text-gray-800 text-xl leading-relaxed italic border-l-4 border-blue-900 pl-4">
+                <p className="text-gray-800 text-2xl leading-relaxed italic border-l-4 border-blue-900 pl-4">
                   "{problem}"
                 </p>
               </div>
@@ -509,7 +491,7 @@ export default function LightBluePortfolio() {
                 <div className="flex items-start gap-3 mb-4">
                   <h4 className="text-2xl font-bold text-blue-900">The System</h4>
                 </div>
-                <p className="text-gray-800 text-lg leading-relaxed border-l-4 border-blue-900 pl-4">
+                <p className="text-gray-800 text-xl leading-relaxed border-l-4 border-blue-900 pl-4">
                   {system}
                 </p>
               </div>
@@ -527,7 +509,7 @@ export default function LightBluePortfolio() {
                       <div className="flex-shrink-0 w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">
                         {idx + 1}
                       </div>
-                      <p className="text-gray-800 pt-1">{step}</p>
+                      <p className="text-gray-800 text-lg pt-1">{step}</p>
                     </div>
                   ))}
                 </div>
@@ -540,7 +522,7 @@ export default function LightBluePortfolio() {
                 <div className="flex items-start gap-3 mb-4">
                   <h4 className="text-2xl font-bold text-blue-900">Why It Matters</h4>
                 </div>
-                <p className="text-gray-800 text-lg leading-relaxed mb-6 border-l-4 border-blue-900 pl-4">
+                <p className="text-gray-800 text-xl leading-relaxed mb-6 border-l-4 border-blue-900 pl-4">
                   {whyItMatters}
                 </p>
                 <div className="mt-6 pt-6 border-t border-blue-200">
@@ -814,7 +796,10 @@ export default function LightBluePortfolio() {
             <button className="px-8 py-3 bg-blue-900 text-white font-semibold hover:scale-105 transition-transform rounded-lg">
               See How I Work
             </button>
-            <button className="px-8 py-3 border-2 border-blue-900 text-blue-900 font-semibold hover:bg-blue-900 hover:text-white transition-all rounded-lg">
+            <button 
+              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-3 border-2 border-blue-900 text-blue-900 font-semibold hover:bg-blue-900 hover:text-white transition-all rounded-lg"
+            >
               Let's Talk
             </button>
           </div>
@@ -1225,7 +1210,7 @@ Sonal has shown steady growth in her ability to approach challenges thoughtfully
       </section>
 
       {/* Contact */}
-      <section className="py-24 px-6 bg-blue-900 text-white relative">
+      <section id="contact" className="py-24 px-6 bg-blue-900 text-white relative">
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <h2 className="text-5xl font-bold mb-8">Let's build something that works.</h2>
           <div className="flex flex-col gap-4 max-w-md mx-auto mb-12">
