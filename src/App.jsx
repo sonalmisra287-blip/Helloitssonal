@@ -613,10 +613,10 @@ export default function LightBluePortfolio() {
     {
       year: '2025',
       title: 'Customer Engagement Marketing Coordinator',
-      company: 'PointClickCare- Toronto, ON',
-      duration: 'May 2025 - Sept 2025',
+      company: 'PointClickCare',
+      duration: 'May 2025 - September 2025',
       logo: '/photos/pcc-logo.png',
-      description: 'I worked on customer marketing campaigns, automations, and surveys to get users more engaged and excited about the product. I learned how to use data and AI to move faster, scale campaigns, and build processes that actually make life easier.',
+      description: 'Worked on designing customer marketing campaigns, automations, and surveys to keep users engaged with the product. Utilized data and AI tools to scale lifecycle campaigns, target better, and simplify marketing operations.',
       context: 'SaaS healthcare platform, scaling customer engagement and adoption',
       problem: 'Low survey response rates, manual campaign work eating team time, slow asset approval cycles',
       ownership: 'Led customer activation, AI automation, and process innovation initiatives',
@@ -626,10 +626,10 @@ export default function LightBluePortfolio() {
     {
       year: '2024',
       title: 'Customer Success Intern',
-      company: 'PointClickCare- Toronto, ON',
-      duration: 'Sept 2024 - Apr 2025',
+      company: 'PointClickCare',
+      duration: 'September 2024 - April 2025',
       logo: '/photos/pcc-logo.png',
-      description: 'I helped bring inactive customers back through targeted emails, content, and data cleanup projects. This role taught me how customer insights, analytics, and collaboration across teams directly impact retention and revenue.',
+      description: 'Reactivated inactive customers through targeted email campaigns, content optimization, and data cleanup initiatives. Applied customer insights and analytics to drive retention-focused strategies and support revenue-impacting engagement efforts across teams.',
       context: 'Healthcare SaaS, managing customer data and engagement campaigns',
       problem: '2,000+ forwarding contacts lost in auto-reply emails, low engagement from dormant customers',
       ownership: 'Built lead data automation, reactivation campaigns, and first Pharmacy digest',
@@ -639,10 +639,10 @@ export default function LightBluePortfolio() {
     {
       year: '2023',
       title: 'HR Corporate & Community Affairs Intern',
-      company: 'Fidelity Investments- Toronto, ON',
-      duration: 'Sept 2023 - Dec 2023',
+      company: 'Fidelity Investments',
+      duration: 'September 2023 - December 2023',
       logo: '/photos/fidelity-logo.png',
-      description: 'I created internal content and helped improve employee platforms to make communication more engaging and accessible. I learned how internal storytelling, data, and community initiatives shape culture at a large organization.',
+      description: 'Created internal content and optimized employee-facing platforms to drive engagement and clarity. Applied storytelling, data insights, and community-led campaigns to strengthen internal communications and support culture-building at scale.',
       context: '2,000+ employees, improving internal comms and engagement',
       problem: 'Low intranet engagement, unclear company achievements visibility',
       ownership: 'Led content optimization and CSR initiative coordination',
@@ -652,10 +652,10 @@ export default function LightBluePortfolio() {
     {
       year: '2023',
       title: 'Business Operations Intern',
-      company: 'Fidelity Investments- Toronto, ON',
-      duration: 'Jan 2023 - Apr 2023',
+      company: 'Fidelity Investments',
+      duration: 'January 2023 - April 2023',
       logo: '/photos/fidelity-logo.png',
-      description: 'I worked behind the scenes in the registered products team, handling things like withdrawals, contributions, and RESPs to help everything run smoothly and faster. Along the way, I dug into reports, tracked transfer requests, and learned how paying attention to the small details can make a big difference in both decision-making and customer experience.',
+      description: 'Managed operational workflows and reporting for registered investment products, ensuring clean data and smooth execution across customer touchpoints. Used data analysis and process optimization to support decision-making and enhance the customer experience.',
       context: 'Registered products department, high-volume processing operations',
       problem: 'Slow processing times, delayed transfer requests impacting customer satisfaction',
       ownership: 'Streamlined processing workflows and monitored transfer operations',
@@ -666,34 +666,37 @@ export default function LightBluePortfolio() {
 
   const caseStudies = [
     {
-      title: 'How We Reactivated "Dead" Customers',
+      title: 'When the right message met the right moment',
+      subtitle: 'Marketing Engagement Coordinator · PointClickCare',
       outcome: '10% Engagement Lift',
-      goal: 'Re-engage low-activity customers who stopped interacting',
-      insight: 'The myth: If customers stop engaging, they\'re gone. The reality: Most were just overlooked. Behavior data showed patterns hiding in plain sight—these users weren\'t uninterested, they just weren\'t being spoken to properly.',
-      strategy: 'Segment low-engagement users and build re-engagement campaigns that spoke to one clear use case at a time, felt human (not automated), and made re-engaging frictionless.',
-      execution: 'Built targeted campaigns addressing specific pain points per segment. Each message focused on a single use case with clear, conversational copy that removed barriers to action.',
-      result: '📈 Engagement increased 10% | 💰 $6.5K in recovered MRR',
-      nextTest: 'Test proactive outreach when usage patterns match at-risk cohort behavior'
+      goal: 'Re-engage low-engagement customers and drive meaningful product interaction through email.',
+      insight: 'Low-engagement customers weren\'t unresponsive – they were receiving generic messaging that didn\'t align with their usage patterns or stage in the customer lifecycle.',
+      strategy: 'Design targeted email campaigns tailored to customer engagement levels and behavioral signals to re-spark interest and drive action.',
+      execution: '• Segmented low-engagement customers based on interaction and usage data\n• Developed targeted email messaging aligned to customer context\n• Deployed re-engagement campaigns focused on clear, low-friction actions',
+      result: '📈 10% lift in email engagement | 💰 $6,500 in additional MRR influenced by reactivated customers',
+      nextTest: '• Subject line personalization vs. content personalization to isolate impact\n• Send-time optimization for re-engagement segments\n• Multi-touch reactivation sequences versus single-email nudges'
     },
     {
-      title: 'The NPS Follow-Up Everyone Skipped',
+      title: 'The Post-NPS Activation Gap',
+      subtitle: 'Customer Success Intern · PointClickCare',
       outcome: '56% Higher Survey Engagement',
-      goal: 'Increase engagement with high-NPS customers',
-      insight: 'Most NPS programs treat every response the same. High-NPS customers were already happy—so instead of another generic survey email, I treated them like insiders.',
-      strategy: 'Segment promoters only. Use lightweight challenges instead of long surveys. Focus on momentum, not reminders.',
-      execution: 'Created short, value-driven asks that made customers feel like insiders. Used challenge-based formats that felt engaging, not extractive. Timed outreach for maximum response rates.',
-      result: '📊 56% higher engagement | ⭐ 21% more customer reviews',
-      nextTest: 'Build tiered insider programs based on engagement frequency and referral quality'
+      goal: 'Increase customer engagement with NPS surveys and convert positive sentiment into public reviews.',
+      insight: 'Customers with high NPS scores were already primed to engage but weren\'t being activated effectively after submitting feedback.',
+      strategy: 'Segment high-NPS survey respondents and design targeted challenges paired with personalized follow-up campaigns to nudge them toward deeper engagement.',
+      execution: '• Identified high-NPS respondents through survey data\n• Designed targeted challenges tailored to this segment\n• Deployed personalized follow-up campaigns to re-engage customers post-survey',
+      result: '📊 56% increase in survey engagement | ⭐ 21% increase in customer reviews',
+      nextTest: '• Timing and frequency of follow-up messages to optimize conversion\n• Different incentive types (social recognition vs. rewards) for review generation\n• Channel mix (email vs. in-app vs. SMS, where applicable) for activation'
     },
     {
-      title: 'What 30 Posts Taught Me About Small Brands',
-      outcome: '20% Social Engagement Lift',
-      goal: 'Increase meaningful social media engagement for small brand',
-      insight: 'Posting more didn\'t move the needle. Learning faster did. Polished content lost. Clear, relatable content won.',
-      strategy: 'Test formats, hooks, timing, and tone across 30 posts—then double down on what actually stopped the scroll. Pair social learnings with website refresh so engagement didn\'t drop after the click.',
-      execution: 'Ran rapid experiments across post types. Tracked what drove real interaction vs vanity metrics. Optimized website experience to match social messaging and maintain momentum.',
-      result: '🔥 20% lift in engagement | 👀 Fewer vanity metrics, more real interaction',
-      nextTest: 'Create content templates from top-performing formats to scale winning patterns'
+      title: 'From Facebook Marketplace to platform adoption',
+      subtitle: 'Business Development Intern · AlaHausse',
+      outcome: '1,300+ Vendors Engaged via CRM',
+      goal: 'Increase brand recognition and drive platform adoption among local vendors.',
+      insight: 'Local vendors were already discoverable on digital marketplaces like Facebook but lacked awareness of the platform or a clear onboarding path.',
+      strategy: 'Combine localized digital outreach with CRM-driven tracking to systematically engage vendors and guide them through adoption.',
+      execution: '• Identified local vendors through Facebook Marketplace and community listings\n• Logged and segmented vendor leads in HubSpot based on location, category, and engagement status\n• Conducted personalized 1:1 outreach using tailored digital messaging\n• Tracked responses, follow-ups, and onboarding progress within HubSpot\n• Supported interested vendors through platform onboarding and setup',
+      result: '📈 Engaged 1,300+ vendors through targeted outreach | 🚀 Increased local brand recognition and drove measurable platform adoption',
+      nextTest: '• HubSpot automation workflows for follow-ups and reminders\n• Lead scoring to prioritize high-intent vendors\n• A referral loop for activated vendors to scale acquisition'
     }
   ];
 
@@ -706,22 +709,7 @@ export default function LightBluePortfolio() {
         '/photos/street1.JPG', '/photos/street2.JPG', '/photos/street3.JPG', '/photos/street4.JPG', '/photos/street6.JPG',
         '/photos/street8.JPG', '/photos/street9.JPG', '/photos/street10.JPG', '/photos/street11.JPG', '/photos/street12.JPG',
         '/photos/street13.JPG', '/photos/street14.JPG', '/photos/street15.JPG', '/photos/street16.JPG', '/photos/street17.JPG',
-        '/photos/street18.JPG', '/photos/street19.JPG', '/photos/street21.JPG', '/photos/street22.JPG', '/photos/street23.JPG',
-        '/photos/street25.JPG', '/photos/street26.JPG', '/photos/street27.JPG', '/photos/street28.JPG', '/photos/street29.JPG',
-        '/photos/street30.JPG', '/photos/street31.JPG', '/photos/street32.JPG', '/photos/street33.JPG', '/photos/street34.JPG',
-        '/photos/street35.JPG', '/photos/street37.JPG', '/photos/street38.JPG', '/photos/street39.JPG', '/photos/street40.JPG',
-        '/photos/street41.JPG', '/photos/street42.JPG', '/photos/street43.JPG', '/photos/street44.JPG', '/photos/street45.JPG',
-        '/photos/street46.JPG', '/photos/street47.JPG', '/photos/street48.JPG', '/photos/street49.JPG', '/photos/street50.JPG',
-        '/photos/street51.JPG', '/photos/street52.JPG', '/photos/street53.JPG', '/photos/street54.JPG', '/photos/street55.JPG',
-        '/photos/street56.JPG', '/photos/street57.JPG', '/photos/street58.JPG', '/photos/street59.JPG', '/photos/street60.JPG',
-        '/photos/street61.JPG', '/photos/street62.JPG', '/photos/street63.JPG', '/photos/street64.JPG', '/photos/street65.JPG',
-        '/photos/street67.JPG', '/photos/street68.JPG', '/photos/street69.JPG', '/photos/street70.JPG', '/photos/street71.JPG',
-        '/photos/street72.JPG', '/photos/street73.JPG', '/photos/street75.JPG', '/photos/street76.JPG', '/photos/street77.JPG',
-        '/photos/street78.JPG', '/photos/street79.JPG', '/photos/street80.JPG', '/photos/street81.JPG', '/photos/street82.JPG',
-        '/photos/street83.JPG', '/photos/street84.JPG', '/photos/street85.JPG', '/photos/street86.JPG', '/photos/street87.JPG',
-        '/photos/street88.JPG', '/photos/street89.JPG', '/photos/street90.JPG', '/photos/street91.JPG', '/photos/street92.JPG',
-        '/photos/street93.JPG', '/photos/street94.JPG', '/photos/street96.JPG', '/photos/street99.JPG', '/photos/street100.JPG',
-        '/photos/street136.JPG'
+        '/photos/street18.JPG', '/photos/street19.JPG', '/photos/street21.JPG', '/photos/street22.JPG', '/photos/street23.JPG'
       ]
     }
   ];
@@ -808,13 +796,13 @@ export default function LightBluePortfolio() {
               <div className="space-y-4 text-lg text-gray-700 leading-relaxed text-center">
                 <p className="text-2xl font-semibold text-blue-900">Hi, I'm Sonal</p>
                 <p>
-                I'm a University of Waterloo grad with a background in Business and Psychology, and I'm fascinated by how people, systems, ideas and strategy come together. I enjoy tackling messy problems and building smarter processes to help make work feel clearer and more human.
+                  I'm a University of Waterloo grad with a background in Business and Psychology, and I'm fascinated by how people, systems, and strategy come together. I enjoy tackling messy problems, building smarter processes, and finding ways to make work feel clearer and more human.
                 </p>
                 <p>
-                I love bringing campaigns to life, from shaping messages for audiences and understanding the audience to launching and testing from real customer behavior. I'm at my best when I'm using insights and data to create experiences that feel thoughtful rather than transactional.
+                  I love bringing campaigns to life, from shaping the message and understanding the audience to launching, testing, and learning from real customer behavior. I'm at my best when I'm using insights and data to improve engagement, refine messaging, and create experiences that feel thoughtful rather than transactional.
                 </p>
                 <p>
-                I'm especially interested in the space where traditional marketing meets automation to support better ideas. Right now, I'm focused on blending psychology, business strategy, and technology to build marketing that genuinely works for people.
+                  I'm especially interested in the space where traditional marketing meets automation, using systems and technology to remove busywork and support better ideas. Right now, I'm focused on blending psychology, business strategy, and technology to build marketing that genuinely works for people.
                 </p>
                 <p>
                   I hope you enjoy reading a little about my journey as much as I've enjoyed creating this space for you 😊
@@ -941,6 +929,7 @@ export default function LightBluePortfolio() {
                 >
                   <div className="text-4xl font-black text-blue-900 mb-4">{study.outcome}</div>
                   <h3 className="text-xl font-bold mb-2">{study.title}</h3>
+                  {study.subtitle && <p className="text-sm text-gray-600 mb-3">{study.subtitle}</p>}
                   <div className="flex items-center text-blue-900 font-semibold group-hover:translate-x-2 transition-transform">
                     Read the story <ChevronRight className="w-5 h-5 ml-1" />
                   </div>
@@ -949,12 +938,15 @@ export default function LightBluePortfolio() {
             </div>
           ) : (
             <div className="bg-white p-8 rounded-lg shadow-xl border border-blue-100">
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-center mb-2">
                 <h3 className="text-3xl font-bold">{caseStudies[selectedCase].title}</h3>
                 <button onClick={() => setSelectedCase(null)} className="p-2 hover:bg-gray-200 rounded">
                   <X className="w-6 h-6" />
                 </button>
               </div>
+              {caseStudies[selectedCase].subtitle && (
+                <p className="text-gray-600 mb-6">{caseStudies[selectedCase].subtitle}</p>
+              )}
               
               <div className="flex gap-2 mb-8">
                 {['Goal', 'Insight', 'Strategy', 'Execution', 'Result', 'Next Test'].map((label, i) => (
@@ -966,9 +958,9 @@ export default function LightBluePortfolio() {
                 {caseStep === 0 && <div><strong className="text-blue-900">Goal:</strong> <p className="mt-2 text-lg">{caseStudies[selectedCase].goal}</p></div>}
                 {caseStep === 1 && <div><strong className="text-blue-900">Insight:</strong> <p className="mt-2 text-lg">{caseStudies[selectedCase].insight}</p></div>}
                 {caseStep === 2 && <div><strong className="text-blue-900">Strategy:</strong> <p className="mt-2 text-lg">{caseStudies[selectedCase].strategy}</p></div>}
-                {caseStep === 3 && <div><strong className="text-blue-900">Execution:</strong> <p className="mt-2 text-lg">{caseStudies[selectedCase].execution}</p></div>}
+                {caseStep === 3 && <div><strong className="text-blue-900">Execution:</strong> <p className="mt-2 text-lg whitespace-pre-line">{caseStudies[selectedCase].execution}</p></div>}
                 {caseStep === 4 && <div><strong className="text-blue-900">Result:</strong> <p className="mt-2 text-lg text-blue-900 font-bold">{caseStudies[selectedCase].result}</p></div>}
-                {caseStep === 5 && <div><strong className="text-blue-900">What I'd Test Next:</strong> <p className="mt-2 text-lg">{caseStudies[selectedCase].nextTest}</p></div>}
+                {caseStep === 5 && <div><strong className="text-blue-900">What I'd Test Next:</strong> <p className="mt-2 text-lg whitespace-pre-line">{caseStudies[selectedCase].nextTest}</p></div>}
               </div>
 
               <div className="flex justify-between">
