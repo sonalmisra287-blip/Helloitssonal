@@ -667,7 +667,7 @@ export default function LightBluePortfolio() {
   const caseStudies = [
     {
       title: 'When the right message met the right moment',
-      subtitle: 'Marketing Engagement Coordinator · PointClickCare',
+      subtitle: 'Customer Success Intern · PointClickCare',
       outcome: '10% Engagement Lift',
       goal: 'Re-engage low-engagement customers and drive meaningful product interaction through email.',
       insight: 'Low-engagement customers weren\'t unresponsive – they were receiving generic messaging that didn\'t align with their usage patterns or stage in the customer lifecycle.',
@@ -678,7 +678,7 @@ export default function LightBluePortfolio() {
     },
     {
       title: 'The Post-NPS Activation Gap',
-      subtitle: 'Customer Success Intern · PointClickCare',
+      subtitle: 'Marketing Engagement Coordinator · PointClickCare',
       outcome: '56% Higher Survey Engagement',
       goal: 'Increase customer engagement with NPS surveys and convert positive sentiment into public reviews.',
       insight: 'Customers with high NPS scores were already primed to engage but weren\'t being activated effectively after submitting feedback.',
