@@ -461,12 +461,12 @@ const StoryCard = ({ title, subtitle, problem, system, howItWorks, whyItMatters,
         </div>
 
         {/* Navigation Controls */}
-        <div className="absolute bottom-6 left-0 right-0 flex justify-between px-8">
+        <div className="absolute bottom-2 left-0 right-0 flex justify-between px-8">
           <button
             type="button"
             onClick={() => currentPage > 0 && setCurrentPage(currentPage - 1)}
             disabled={currentPage === 0}
-            className="px-4 py-2 text-sm bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1 cursor-pointer"
+            className="px-3 py-1 text-xs bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1 cursor-pointer"
           >
             <span>←</span> Previous
           </button>
@@ -474,7 +474,7 @@ const StoryCard = ({ title, subtitle, problem, system, howItWorks, whyItMatters,
             type="button"
             onClick={() => currentPage < pages.length - 1 && setCurrentPage(currentPage + 1)}
             disabled={currentPage === pages.length - 1}
-            className="px-4 py-2 text-sm bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1 cursor-pointer"
+            className="px-3 py-1 text-xs bg-blue-900 text-white font-semibold rounded disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-800 transition-colors flex items-center gap-1 cursor-pointer"
           >
             Next <span>→</span>
           </button>
@@ -1116,59 +1116,62 @@ export default function LightBluePortfolio() {
           <p className="text-xl text-gray-600 mb-16">Systems I would build for marketing.</p>
           
           <div className="space-y-8">
-            {/* Story 1: Product Launch Command Center */}
+            {/* Story 1: Campaign Performance Snapshot Dashboard Flow */}
             <StoryCard
               key="story-1"
-              title="Product Launch Command Center"
-              subtitle="One place to plan, track, and measure every launch"
-              problem="Product launches lived across decks, documents, emails, and meetings, making ownership unclear and performance hard to track."
-              system="A centralized launch intake workflow that automatically creates go-to-market tasks, assigns owners, and tracks launch milestones and KPIs in one place."
+              title="Campaign Performance Snapshot Dashboard Flow"
+              subtitle="Automated reporting for real-time campaign visibility"
+              problem="Campaign performance data lives across multiple tools, making reporting manual, time-consuming, and inconsistent. As a result, stakeholders lack timely visibility into what's working and where to optimize."
+              system="An automated reporting workflow that consolidates campaign performance data into a single, up-to-date dashboard and delivers regular performance snapshots to stakeholders."
               howItWorks={[
-                'A standardized launch intake form captures key inputs (product, audience, timeline, goals)',
-                'Submission triggers automated creation of launch tasks and owners across teams',
-                'Milestones and dependencies are tracked in a shared workspace',
-                'Launch progress auto-updates status and KPIs in real time'
+                'Campaign data is pulled from marketing and CRM platforms',
+                'Metrics are standardized and updated in a central data source',
+                'Dashboards refresh automatically with the latest results',
+                'Performance summaries are shared with key stakeholders',
+                'Data is stored for trend analysis and optimization'
               ]}
-              whyItMatters="Improves launch consistency, reduces manual coordination, and gives leadership clear visibility into launch readiness and impact."
-              tools={['Power Automate', 'Microsoft Forms', 'SharePoint', 'Planner', 'Teams']}
+              whyItMatters="Provides real-time visibility into campaign performance, reduces manual reporting and errors, enables data-driven optimization of engagement campaigns, and aligns Marketing, Sales, and Leadership with consistent insights."
+              tools={['Power Automate', 'Salesforce', 'Email Marketing', 'SharePoint', 'Power BI']}
               currentPage={storyPage1}
               setCurrentPage={setStoryPage1}
             />
 
-            {/* Story 2: Launch KPI Auto-Tracker */}
+            {/* Story 2: Digital Onboarding Milestone Tracker */}
             <StoryCard
               key="story-2"
-              title="Launch KPI Auto-Tracker"
-              subtitle="Stop manually reporting—let the data tell the story"
-              problem="Post-launch performance data was scattered across tools, requiring manual reporting to understand what worked and what didn't."
-              system="A recurring automation that pulls pipeline, adoption, and engagement data tied to each launch and compares planned vs. actual KPIs."
+              title="Digital Onboarding Milestone Tracker"
+              subtitle="Proactive onboarding at scale with automated milestone tracking"
+              problem="Onboarding progress is often tracked manually and inconsistently, making it hard to identify stalled customers early. This leads to delayed time-to-value, lower adoption, and reactive Customer Success interventions."
+              system="An automated onboarding tracking workflow that monitors key milestones, proactively nudges customers when progress slows, and alerts CSMs only when intervention is needed."
               howItWorks={[
-                'Launch KPIs are defined upfront and stored centrally',
-                'A scheduled automation pulls performance data from CRM and reporting sources',
-                'Actual results are compared against launch targets automatically',
-                'A recurring summary highlights trends, gaps, and areas needing adjustment'
+                'Onboarding milestones are defined and tracked for each account',
+                'Product, CRM, and training signals update milestone status automatically',
+                'Accounts that miss milestone timelines are flagged as stalled',
+                'Targeted digital nudges are sent to help customers progress',
+                'CSMs are notified when accounts require hands-on support'
               ]}
-              whyItMatters="Enables PMMs to quickly evaluate launch success, adjust messaging or strategy, and communicate performance with confidence."
-              tools={['Power Automate', 'Salesforce', 'Excel / Power BI', 'SharePoint']}
+              whyItMatters="Makes onboarding progress measurable and visible, reduces time-to-value through proactive engagement, enables digital-first onboarding at scale, and identifies friction points early before churn risk increases."
+              tools={['Power Automate', 'Salesforce', 'Product Analytics', 'Email Marketing', 'Teams', 'Planner']}
               currentPage={storyPage2}
               setCurrentPage={setStoryPage2}
             />
 
-            {/* Story 3: Deal-Triggered Sales Enablement */}
+            {/* Story 3: Webinar & Event Follow-Up Automation */}
             <StoryCard
               key="story-3"
-              title="Deal-Triggered Sales Enablement"
-              subtitle="The right message, at the right stage, automatically"
-              problem="Sales teams didn't always have the right messaging or assets at the right stage of the buying process."
-              system="A Salesforce-triggered automation that detects opportunity stage changes and delivers relevant PMM-approved messaging, decks, and references in real time."
+              title="Webinar & Event Follow-Up Automation"
+              subtitle="Automated post-event workflows that drive engagement and conversion"
+              problem="Webinars generate high-intent leads, but follow-up is often delayed, inconsistent, and poorly connected to Sales and Customer Success—causing engagement to drop and valuable signals to be missed."
+              system="An automated post-event workflow that segments attendees, triggers personalized follow-ups, and routes high-intent leads to the right teams—without manual effort."
               howItWorks={[
-                'Opportunity stages in Salesforce act as triggers',
-                'Each stage is mapped to approved PMM messaging and assets',
-                'When a deal progresses, the relevant materials are automatically delivered to Sales',
-                'Content stays consistent and up to date without manual PMM intervention'
+                'Event attendance and engagement data is captured',
+                'Attendees are automatically segmented by behavior',
+                'Tailored follow-ups are sent to attendees and no-shows',
+                'High-intent leads are routed to Sales and Customer Success',
+                'Engagement is tracked for reporting and future nurture'
               ]}
-              whyItMatters="Improves message consistency, reduces friction for Sales, and ensures PMM strategy shows up where it matters most—inside active deals."
-              tools={['Power Automate', 'Salesforce', 'Outlook / Teams', 'SharePoint']}
+              whyItMatters="Improves speed and consistency of post-event follow-up, increases lead conversion and product adoption, strengthens alignment between Marketing, Sales, and CS, and scales event engagement without added operational work."
+              tools={['Power Automate', 'Webinar Exports', 'Salesforce', 'Email Marketing', 'Teams', 'Planner']}
               currentPage={storyPage3}
               setCurrentPage={setStoryPage3}
             />
