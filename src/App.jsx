@@ -837,7 +837,6 @@ export default function LightBluePortfolio() {
             </span>
             <span className="inline-block">Not a resume. A journey.</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-16">Each role was a new experience.</p>
           
           <div className="relative border-l-4 border-blue-900 pl-12 space-y-12">
             {experiences.map((exp, idx) => (
@@ -915,9 +914,8 @@ export default function LightBluePortfolio() {
               <span className="test-tube-spill" style={{ animationDelay: '0.6s' }}></span>
               <span className="test-tube-spill" style={{ animationDelay: '1.2s' }}></span>
             </span>
-            <span>Things I've tested (so you don't have to)</span>
+            <span>What I Tested — And What Worked</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-16">Real experiments. Real outcomes.</p>
           
           {selectedCase === null ? (
             <div className="grid md:grid-cols-3 gap-6">
@@ -989,9 +987,8 @@ export default function LightBluePortfolio() {
           <div className="mb-16">
             <h2 className="text-5xl font-bold text-blue-900 mb-3 flex items-center gap-3">
               <span className="inline-block animate-spin-slow text-6xl">⚙️</span>
-              <span>I Automate So Marketers Can Breathe</span>
+              <span>I design systems that scale work, not pressure.</span>
             </h2>
-            <p className="text-xl text-gray-600">Systems that scale work, not stress.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -1049,7 +1046,6 @@ export default function LightBluePortfolio() {
             </span>
             <span>Projects That Show How I Think & Execute</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-16">From client work to technical builds.</p>
           
           <div className="space-y-8">
             {/* Project 1: Pristine Clean */}
@@ -1113,7 +1109,6 @@ export default function LightBluePortfolio() {
             <span className="text-5xl animate-lightbulb">💡</span>
             <span>What I'd Build Next</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-16">Systems I would build for marketing.</p>
           
           <div className="space-y-8">
             {/* Story 1: Campaign Performance Snapshot Dashboard Flow */}
@@ -1224,19 +1219,16 @@ Sonal has shown steady growth in her ability to approach challenges thoughtfully
                 <span className="eyeball-pupil animate-pupil-move"></span>
               </span>
             </span>
-            <span>Offline, but still curious.</span>
+            <span>Hobbies I Take Too Seriously.</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-4">Everything I do outside work</p>
-          <h3 className="text-3xl font-bold text-blue-900 mb-2">Photography</h3>
-          <p className="text-lg text-gray-600 mb-12 italic">I've always had an eye for the details others walk past.</p>
+          <h3 className="text-3xl font-bold text-blue-900 mb-6">Photography</h3>
           
           {/* Embedded Photo Carousel */}
           <EmbeddedCarousel photos={offHours[0].photos} />
           
           {/* Blog Section */}
           <div className="mt-16 text-left">
-            <h3 className="text-3xl font-bold text-blue-900 mb-2">Writing</h3>
-            <p className="text-lg text-gray-600 mb-6 italic">Where I turn thoughts into words and ideas into stories.</p>
+            <h3 className="text-3xl font-bold text-blue-900 mb-6">Writing</h3>
             <div className="rounded-lg overflow-hidden shadow-xl border-2 border-blue-200">
               <iframe 
                 src="https://sonalmisrablog.home.blog/" 
